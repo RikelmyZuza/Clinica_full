@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Feminina</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Link para o Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8d7e6;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            text-align: center;
+        }
+        #loginForm {
+            max-width: 350px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .form-control {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: calc(100% - 20px);
+        }
+        .btn-primary {
+            background-color: #f4a4c0;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #e893b2;
+        }
+        .new-account {
+            display: block;
+            width: 100%;
+            margin-top: 15px;
+            padding: 12px 0;
+            border-radius: 5px;
+            background-color: #f4a4c0;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .new-account:hover {
+            background-color: #e893b2;
+        }
+    </style>
+</head>
+<header>
+    <nav class="navbar">
+      <div class="logo">Ser Mulher</div>  
+      <ul id="navbar-links">
+        <li><a href="index.html">Sobre Nós</a></li>
+        <li><a href="equipe.html">Equipe</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="agendamentos.html" class="cta-button">Agendar Consulta</a></li>
+      </ul>
+    </nav>
+</header>
+<body class="bg-light">
+    <div class="container">
+        <div class="card">
+            <h2 class="text-center mb-4">Login</h2>
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Usuário</label>
+                    <input type="text" id="username" class="form-control" placeholder="Digite seu usuário" required />
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Senha</label>
+                    <input type="password" id="password" class="form-control" placeholder="Digite sua senha" required />
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Entrar</button>
+            </form>
+            <a href="register.html" class="new-account">Criar uma nova conta</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
