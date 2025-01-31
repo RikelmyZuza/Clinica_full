@@ -1,0 +1,991 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f1e0e6; /* Rosa claro */
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+header {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    background-color: #f8b6c2;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.navbar .logo {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.navbar ul li {
+    margin-left: 1.5rem;
+}
+
+.navbar ul li a {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: #e68a9d;
+    transform: scale(1.05);
+}
+
+.cta-button {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    background-color: #e85a77;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white !important;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #d14965;
+    transform: translateY(-3px);
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #f8b6c2;
+    }
+    .navbar ul li {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .navbar ul li a {
+        display: block;
+        padding: 1rem;
+    }
+    .navbar .menu-btn {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #fff;
+    }
+    .navbar ul.show {
+        display: flex;
+    }
+}
+
+/* Define a cor inicial da navegação */
+.navbar {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 10px 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar.transparent {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Outros estilos para o conteúdo da navbar */
+.navbar .logo {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    font-size: 24px;
+    font-weight: bold;
+    color: #f8b6c2;
+    margin-left: 20px;
+}
+
+#navbar-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+#navbar-links li {
+    margin-left: 20px;
+}
+
+#navbar-links li a {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Cabeçalho */
+.header {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    background-color: #ff6f91;
+    color: #fff;
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.header .logo {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-left: 1rem;
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-right: 1rem;
+    color: #fff;
+}
+
+.header .navigation {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.header .navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.header .navigation a {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+}
+
+.header .navigation a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffe6eb;
+    text-shadow: 0 1px 5px rgba(255, 255, 255, 0.6);
+}
+
+/* Menu Responsivo */
+@media (max-width: 768px) {
+    .header .navigation {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ff6f91;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .header .navigation.active {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+}
+
+/* Banner */
+.banner {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #ff6f91, #ff8eae);
+    color: #fff;
+    border-radius: 10px;
+    margin: 2rem 0;
+    transition: background 0.3s ease;
+}
+
+.banner:hover {
+    background: linear-gradient(to left, #ff6f91, #ff8eae);
+}
+
+.banner h1 {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.banner p {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.banner .button {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    background-color: #fff;
+    color: #ff6f91;
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.banner .button:hover {
+    background-color: #ffe6eb;
+    color: #ff4971;
+}
+
+/* Seções */
+section {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    padding: 3rem 0;
+}
+
+.about, .services, .team, .contact {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    text-align: center;
+    background-color: #fff;
+    margin: 1rem 0;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about h2, .services h2, .team h2, .contact h2 {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    color: #ff6f91;
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.about p, .services p, .team p, .contact p {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.service {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    width: 300px;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fdfdfd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.service:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #ffeff4;
+}
+
+.service h3 {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    color: #ff6f91;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+}
+
+/* Botões globais */
+button, .button {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    background-color: #ff6f91;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+button:hover, .button:hover {
+    background-color: #e05573;
+    transform: translateY(-2px);
+}
+
+/* Formulário de Contato */
+form {
+    font-family: Arial, sans-serif;
+    max-width: 400px; /* Ajuste o tamanho para maior legibilidade */
+    width: 100%; /* Garante que o formulário seja responsivo */
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-family: Arial, sans-serif;
+    display: block;
+    margin: 1rem 0 0.5rem;
+    font-weight: 600;
+    color: #555;
+}
+
+input, textarea {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    padding: 0.9rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #ff6f91;
+    box-shadow: 0 0 5px rgba(255, 111, 145, 0.5);
+}
+
+.footer {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    background-color: #fff; /* Fundo branco */
+    color: #333; /* Cor do texto em cinza escuro */
+    padding: 2rem 0;
+    font-size: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidade */
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer .footer-left p {
+    margin: 0;
+}
+
+.footer .footer-center {
+    text-align: center;
+}
+
+.footer .footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer .footer-links li a {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer .footer-links li a:hover {
+    color: #ff6f91;
+}
+
+.footer .footer-right {
+    text-align: right;
+}
+
+.footer .social-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer .social-links li a {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer .social-links li a:hover {
+    color: #ff6f91;
+}
+
+a {
+    font-family: Arial, sans-serif; /* Fonte alterada para Arial */
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+}
+
+/* Banner */
+.banner {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #ff6f91, #ff8eae);
+    color: #fff;
+    border-radius: 10px;
+    margin: 2rem 0;
+    transition: background 0.3s ease;
+}
+
+.banner:hover {
+    background: linear-gradient(to left, #ff6f91, #ff8eae);
+}
+
+.banner h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.banner p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.banner .button {
+    background-color: #fff;
+    color: #ff6f91;
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.banner .button:hover {
+    background-color: #ffe6eb;
+    color: #ff4971;
+}
+
+/* Seções */
+section {
+    padding: 3rem 0;
+}
+
+.about, .services, .team, .contact {
+    text-align: center;
+    background-color: #fff;
+    margin: 1rem 0;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about h2, .services h2, .team h2, .contact h2 {
+    color: #ff6f91;
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.about p, .services p, .team p, .contact p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.service {
+    width: 300px;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fdfdfd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.service:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #ffeff4;
+}
+
+.service h3 {
+    color: #ff6f91;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+}
+
+/* Botões globais */
+button, .button {
+    background-color: #ff6f91;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+button:hover, .button:hover {
+    background-color: #e05573;
+    transform: translateY(-2px);
+}
+
+/* Formulário de Contato */
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    font-weight: 600;
+    color: #555;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.9rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #ff6f91;
+    box-shadow: 0 0 5px rgba(255, 111, 145, 0.5);
+}
+
+.footer {
+    background-color: #fff; /* Fundo branco */
+    color: #333; /* Cor do texto em cinza escuro */
+    padding: 2rem 0;
+    font-size: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidade */
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer .footer-left p {
+    margin: 0;
+}
+
+.footer .footer-center {
+    text-align: center;
+}
+
+.footer .footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer .footer-links li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer .footer-links li a:hover {
+    color: #ff6f91;
+}
+
+.footer .footer-right {
+    text-align: right;
+}
+
+.footer .social-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer .social-links li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer .social-links li a:hover {
+    color: #ff6f91;
+}
+    .team {
+        background-color: #f9f9f9;
+        padding: 40px 20px;
+    }
+
+    .team h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .team {
+        background-color: #f9f9f9;
+        padding: 0; /* Remove padding ao redor para que a seção ocupe toda a largura */
+        margin: 0; /* Remove margens */
+    }
+    
+    .team h2 {
+        text-align: center;
+        margin: 20px 0;
+    }
+    
+    .team .team-members {
+        display: flex;
+        flex-wrap: wrap; /* Permite que os membros quebrem linha */
+        justify-content: space-between; /* Espaça os membros de forma uniforme */
+        gap: 0; /* Remove espaços entre os membros */
+        width: 100%; /* Garante que a área ocupe 100% da largura da tela */
+    }
+    
+    .team-member {
+        flex: 1 1 25%; /* Cada membro ocupa 25% da largura (4 por linha em telas grandes) */
+        max-width: 25%; /* Limita a largura máxima a 25% */
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 12px; /* Adiciona bordas arredondadas */
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        box-sizing: border-box; /* Inclui bordas no cálculo do tamanho */
+    }
+    
+    .team-member:hover {
+        transform: translateY(-10px);
+    }
+    
+    .team-img {
+        width: 100px; /* Ajusta o tamanho da imagem */
+        height: 100px;
+        border-radius: 50%; /* Mantém a imagem circular */
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+    
+    .specialty {
+        font-weight: bold;
+        color: #4CAF50;
+        margin-bottom: 10px;
+    }
+    
+    .team-member p {
+        font-size: 14px;
+        color: #555;
+    }
+    
+    /* Responsividade para telas menores */
+    @media (max-width: 1024px) {
+        .team-member {
+            flex: 1 1 33.333%; /* Cada membro ocupa 33.33% da largura (3 por linha) */
+            max-width: 33.333%;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .team-member {
+            flex: 1 1 50%; /* Cada membro ocupa 50% da largura (2 por linha) */
+            max-width: 50%;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .team-member {
+            flex: 1 1 100%; /* Cada membro ocupa 100% da largura (1 por linha) */
+            max-width: 100%;
+        }
+    }
+    
+/* Seção "Sobre a Clínica" */
+.sobre-clinica {
+    background-color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-clinica h2 {
+    font-size: 2.5rem;
+    color: #ff6f91;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sobre-clinica p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.sobre-clinica h3 {
+    font-size: 1.8rem;
+    color: #ff6f91;
+    margin-top: 2rem;
+}
+
+.sobre-clinica ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.sobre-clinica ul li {
+    margin-bottom: 0.5rem;
+}
+/* Seção "Sobre a Clínica" */
+.sobre-clinica {
+    background-color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-clinica h2 {
+    font-size: 2.5rem;
+    color: #ff6f91;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sobre-clinica p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.sobre-clinica .clinic-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.sobre-clinica .gallery-item {
+    width: 30%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.sobre-clinica .gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.sobre-clinica .clinic-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Seção de localização */
+.localizacao {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+}
+
+/* Contêiner para o conteúdo da localização */
+.localizacao-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;  /* Responsivo: para telas menores, vai empilhar */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo do texto de localização */
+.localizacao-info {
+    flex: 1;
+    max-width: 500px; /* Definindo uma largura máxima */
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.localizacao-info h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1c1c1c;
+    margin-bottom: 20px;
+}
+
+/* Estilo do mapa */
+.map-container {
+    flex: 1;
+    max-width: 700px;  /* Definindo uma largura máxima para o mapa */
+    height: 450px;
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Garantir que nada ultrapasse a borda arredondada */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor do mapa */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .localizacao-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .localizacao-info {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .map-container {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+/* Estilo do texto de localização */
+.localizacao-info h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff6f91; /* Cor alterada para #ff6f91 */
+    margin-bottom: 20px;
+}
+
+.contato-horarios {
+    margin-top: 30px;
+}
+
+.contato-horarios h2 {
+    color: #ff6f91; /* Cor rosa para os títulos */
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.fale-conosco, .nossos-horarios {
+    margin-bottom: 20px;
+}
+
+.fale-conosco p, .nossos-horarios p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+.fale-conosco p i {
+    margin-right: 10px;
+    color: #25d366; /* Cor do ícone do WhatsApp */
+}
+
+.fale-conosco p a {
+    color: #25d366;
+    text-decoration: none;
+}
